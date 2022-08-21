@@ -1,7 +1,8 @@
 import { APIGatewayProxyEvent } from 'aws-lambda';
 import { formatJSONResponse } from '@libs/api-gateway';
 import { middyfy } from '@libs/lambda';
-import products from '@mocks/products.json';
+import { productsData } from '@mocks/productsData';
+import { getById } from '@services/product.service';
 
 const getProductsById = async (event: APIGatewayProxyEvent) => {
   try {
@@ -9,7 +10,7 @@ const getProductsById = async (event: APIGatewayProxyEvent) => {
     console.log('Path Parameters: ', JSON.stringify(event.pathParameters));
 
     const { productId } = event.pathParameters;
-    const itemById = products.find((el) => el.id === productId);
+    const itemById = getById(productId);
     console.log('getProductsById Lambda: search by id result: ', itemById);
 
     if(!itemById) {

@@ -11,8 +11,15 @@
     "outDir": "lib",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
+    "types": [
+      "jest",
+      "node"
+    ],
   },
-  "include": ["src/**/*.ts", "serverless.ts"],
+  "include": [
+    "src/**/*.ts",
+    "serverless.ts",
+    "**/*.spec.ts"],
   "exclude": [
     "node_modules/**/*",
     ".serverless/**/*",

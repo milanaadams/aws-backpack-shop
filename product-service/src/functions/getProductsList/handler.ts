@@ -1,15 +1,15 @@
-import { APIGatewayProxyEvent } from 'aws-lambda';
 import { formatJSONResponse } from '@libs/api-gateway';
 import { middyfy } from '@libs/lambda';
-import products from '@mocks/products.json';
+import { getAll } from '@services/product.service';
 
-const getProductsList = async (event: APIGatewayProxyEvent) => {
+const getProductsList = async () => {
   try {
-    console.log('getProductList Lambda: Incoming Event: ', JSON.stringify(event));
+    const productsData = getAll();
+    console.error('getProductList Lambda: productsData: ', productsData);
     return formatJSONResponse({
       statusCode: 200,
-      result: products,
-    });
+      result: productsData,
+  });
   } catch (err) {
     console.error('getProductList Lambda: Error Encountered: ', err);
     return formatJSONResponse({
