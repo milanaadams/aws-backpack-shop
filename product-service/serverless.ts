@@ -6,7 +6,7 @@ import getProductsById from '@functions/getProductsById';
 const serverlessConfiguration: AWS = {
   service: 'product-service-backpack-store',
   frameworkVersion: '3',
-  plugins: ['serverless-esbuild'],
+  plugins: ['serverless-auto-swagger','serverless-esbuild', 'serverless-offline'],
   provider: {
     name: 'aws',
     runtime: 'nodejs14.x',
@@ -39,6 +39,12 @@ const serverlessConfiguration: AWS = {
       platform: 'node',
       concurrency: 10,
     },
+    autoswagger: {
+      typefiles: ['./src/models/product.model.ts'],
+      apiType: 'http',
+      useStage: true,
+      basePath: '/dev',
+    }
   },
 };
 
