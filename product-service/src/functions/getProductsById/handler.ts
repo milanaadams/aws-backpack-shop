@@ -1,7 +1,7 @@
 import { APIGatewayProxyEvent } from 'aws-lambda';
 import { formatJSONResponse } from '@libs/api-gateway';
 import { middyfy } from '@libs/lambda';
-import { productsData } from '@mocks/productsData';
+import { headers } from '@libs/headers';
 import { getById } from '@services/product.service';
 
 const getProductsById = async (event: APIGatewayProxyEvent) => {
@@ -16,6 +16,7 @@ const getProductsById = async (event: APIGatewayProxyEvent) => {
     if(!itemById) {
         return formatJSONResponse({
             statusCode: 404,
+            headers,
             result: {
                 message: 'Item is not found'
             },
@@ -24,12 +25,14 @@ const getProductsById = async (event: APIGatewayProxyEvent) => {
 
     return formatJSONResponse({
       statusCode: 200,
+      headers,
       result: itemById,
     });
   } catch (err) {
     console.error('getProductList Lambda: Error Encountered: ', err);
     return formatJSONResponse({
       statusCode: 500,
+      headers,
       result: err,
     });
   }

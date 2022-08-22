@@ -2,7 +2,7 @@
             module.exports = {
   "swagger": "2.0",
   "info": {
-    "title": "product-service-backpack-store",
+    "title": "product-service-natallia-adziyanava",
     "version": "1"
   },
   "paths": {
@@ -67,16 +67,12 @@
           "title": "Product.description",
           "type": "string"
         },
-        "manufacturer": {
-          "title": "Product.manufacturer",
-          "type": "string"
-        },
         "price": {
           "title": "Product.price",
           "type": "number"
         },
-        "stock": {
-          "title": "Product.stock",
+        "count": {
+          "title": "Product.count",
           "type": "number"
         },
         "image": {
@@ -88,9 +84,8 @@
         "id",
         "title",
         "description",
-        "manufacturer",
         "price",
-        "stock",
+        "count",
         "image"
       ],
       "additionalProperties": false,

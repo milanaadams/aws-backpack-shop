@@ -4,7 +4,7 @@ import getProductsList from '@functions/getProductsList';
 import getProductsById from '@functions/getProductsById';
 
 const serverlessConfiguration: AWS = {
-  service: 'product-service-backpack-store',
+  service: 'product-service-natallia-adziyanava',
   frameworkVersion: '3',
   plugins: ['serverless-auto-swagger','serverless-esbuild', 'serverless-offline'],
   provider: {
