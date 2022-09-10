@@ -7,13 +7,15 @@ const TABLE_NAME = process.env.DYNAMO_TABLE_NAME;
 export const createEntity = async(item: Product): Promise<Product> => {
 
     try {
-        const res = await db.put({
+        await db.put({
             TableName: TABLE_NAME,
             Item: item
         }).promise();
-        console.log('Create Entity res: ', res);
+        console.log('Create Entity res: ');
         
-        return await getById(item.id);
+        const res = await getById(item.id);
+        if(!res) throw new Error;
+        return res;
     } catch(err) {
         console.log('Create Entity error: ', err);
     }
