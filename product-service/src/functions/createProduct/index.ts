@@ -7,7 +7,8 @@ export default {
       http: {
         method: 'post',
         path: 'products',
-        cors: true
+        cors: true,
+        bodyType: 'ProductRequest'
       },
     },
   ],
