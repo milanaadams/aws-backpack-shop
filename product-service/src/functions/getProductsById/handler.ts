@@ -10,7 +10,7 @@ const getProductsById = async (event: APIGatewayProxyEvent) => {
     console.log('Path Parameters: ', JSON.stringify(event.pathParameters));
 
     const { productId } = event.pathParameters;
-    const itemById = getById(productId);
+    const itemById = await getById(productId);
     console.log('getProductsById Lambda: search by id result: ', itemById);
 
     if(!itemById) {

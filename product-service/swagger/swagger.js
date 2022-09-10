@@ -23,6 +23,23 @@
             "description": "200 response"
           }
         }
+      },
+      "post": {
+        "summary": "createProduct",
+        "description": "",
+        "operationId": "createProduct.post.products",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "200 response"
+          }
+        }
       }
     },
     "/products/{productId}": {
@@ -90,6 +107,40 @@
       ],
       "additionalProperties": false,
       "title": "Product",
+      "type": "object"
+    },
+    "ProductRequest": {
+      "properties": {
+        "title": {
+          "title": "ProductRequest.title",
+          "type": "string"
+        },
+        "description": {
+          "title": "ProductRequest.description",
+          "type": "string"
+        },
+        "price": {
+          "title": "ProductRequest.price",
+          "type": "number"
+        },
+        "count": {
+          "title": "ProductRequest.count",
+          "type": "number"
+        },
+        "image": {
+          "title": "ProductRequest.image",
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "price",
+        "count",
+        "image"
+      ],
+      "additionalProperties": false,
+      "title": "ProductRequest",
       "type": "object"
     }
   },

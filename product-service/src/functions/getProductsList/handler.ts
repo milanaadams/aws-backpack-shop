@@ -5,7 +5,7 @@ import { getAll } from '@services/product.service';
 
 const getProductsList = async () => {
   try {
-    const productsData = getAll();
+    const productsData = await getAll();
     console.log('getProductList Lambda: productsData: ', productsData);
     const res = formatJSONResponse({
       statusCode: 200,

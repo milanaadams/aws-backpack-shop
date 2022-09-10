@@ -2,6 +2,7 @@ import type { AWS } from '@serverless/typescript';
 
 import getProductsList from '@functions/getProductsList';
 import getProductsById from '@functions/getProductsById';
+import createProduct from '@functions/createProduct';
 
 const serverlessConfiguration: AWS = {
   service: 'product-service-natallia-adziyanava',
@@ -17,17 +18,59 @@ const serverlessConfiguration: AWS = {
       shouldStartNameWithService: true,
     },
     iam: {
-      role: 'arn:aws:iam::398158581759:role/BasicLambdaExecutionRole',
+      role: {
+        permissionsBoundary: 'arn:aws:iam::${aws:accountId}:policy/eo_role_boundary',
+        statements: [{
+          Effect: 'Allow',
+          Action: [
+            's3:*',
+            'dynamodb:Query',
+            'dynamodb:Scan',
+            'dynamodb:GetItem',
+            'dynamodb:PutItem',
+            'dynamodb:UpdateItem',
+            'dynamodb:DeleteItem'
+          ],
+          Resource: '*'
+        }]
+      }
     },
     profile: 'js-cc4-auto',
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
       NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000',
+      DYNAMO_TABLE_NAME: 'products-table-natallia-adziyanava'
     },
   },
   // import the function via paths
-  functions: { getProductsList, getProductsById },
+  functions: { getProductsList, getProductsById, createProduct },
   package: { individually: true },
+  resources: {
+    Resources: {
+      ProductsTable: {
+        Type: "AWS::DynamoDB::Table",
+        Properties: {
+          TableName: "${self:provider.environment.DYNAMO_TABLE_NAME}",
+          AttributeDefinitions: [
+            {
+              AttributeName: 'id',
+              AttributeType: 'S'
+            }
+          ],
+          KeySchema: [
+            {
+              KeyType: 'HASH',
+              AttributeName: 'id',
+            },
+          ],
+          ProvisionedThroughput: {
+            ReadCapacityUnits: 1,
+            WriteCapacityUnits: 1
+          }
+        }
+      }
+    }
+  },
   custom: {
     esbuild: {
       bundle: true,
