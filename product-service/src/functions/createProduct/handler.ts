@@ -3,14 +3,31 @@ import { formatJSONResponse } from '@libs/api-gateway';
 import { middyfy } from '@libs/lambda';
 import { headers } from '@libs/headers';
 import * as productService from '@services/product.service';
+import { createProductSchema } from '@libs/schemaValidations';
 
 const createProduct = async (event: APIGatewayProxyEvent) => {
   try {
     console.log('createProduct Lambda: Event: ', event);
+
     const data = JSON.parse(JSON.stringify(event.body));
     console.log('createProduct Lambda: data: ', data);
+
+    try {
+        await createProductSchema.validate(data);
+    } catch(err) {
+        return formatJSONResponse({
+            statusCode: 400,
+            headers,
+            result: {
+                ErrorName: err.name,
+                Errors: err.errors
+            },
+        });
+    }
+
     const newProduct = await productService.createProduct(data);
     console.log('createProduct Lambda: new product: ', newProduct);
+
     const res = formatJSONResponse({
       statusCode: 200,
       headers,

@@ -14,7 +14,8 @@
     "@middy/http-json-body-parser": "^2.5.3",
     "serverless-auto-swagger": "^2.8.2",
     "tsconfig-paths-jest": "^0.0.1",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@serverless/typescript": "^3.0.0",
