@@ -20,7 +20,7 @@ const serverlessConfiguration: AWS = {
       role: {
         permissionsBoundary: 'arn:aws:iam::${aws:accountId}:policy/eo_role_boundary',
         statements: [
-          {
+        {
           Effect: 'Allow',
           Action: [
             's3:ListBucket',
@@ -33,6 +33,11 @@ const serverlessConfiguration: AWS = {
             's3:*',
           ],
           Resource: 'arn:aws:s3:::${self:provider.environment.BUCKET_NAME}/*'
+        },
+        {
+          Effect: 'Allow',
+          Action: 'sqs:*',
+          Resource: '${param:CatalogItemsQueueArn}'
         }
       ]
       }
@@ -42,6 +47,7 @@ const serverlessConfiguration: AWS = {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
       NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000',
       BUCKET_NAME: 'import-products-natallia-adziyanava',
+      SQS_URL: '${param:CatalogItemsQueueURL}',
     },
   },
   // import the function via paths

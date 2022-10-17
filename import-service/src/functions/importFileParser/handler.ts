@@ -8,6 +8,7 @@ import csv from 'csv-parser';
 
 export const importFileParser = async(event: S3Event) => {
     const s3 = new AWS.S3({ region: 'eu-central-1' });
+    const sqs = new AWS.SQS();
     const BUCKET_NAME = process.env.BUCKET_NAME;
 
     try {
@@ -15,7 +16,6 @@ export const importFileParser = async(event: S3Event) => {
             console.log(`Parsing ${record.s3.object.key} from ${BUCKET_NAME}`);
             console.log('Record: ', record);
             
-            const resData =[];
             const key = record.s3.object.key;
 
             const stream = s3.getObject({
@@ -25,7 +25,17 @@ export const importFileParser = async(event: S3Event) => {
 
             stream
                 .pipe(csv())
-                .on('data', (data) => resData.push(data))
+                .on('data', (data) => {
+                    console.log("Csv data: ", data)
+                    const sqsMessage = {
+                        QueueUrl: process.env.SQS_URL,
+                        MessageBody: JSON.stringify(data)
+                    }
+                    console.log('SQS Message: ', sqsMessage);
+                    sqs.sendMessage(sqsMessage, (err, msg) => {
+                        err ? console.log('SQS Error: ', err) : console.log('SQS message has been successfully sent: ', msg);
+                    })
+                })
                 .on('error', (err) => {
                     console.log('Parsing error: ', err);
                     return formatJSONResponse({

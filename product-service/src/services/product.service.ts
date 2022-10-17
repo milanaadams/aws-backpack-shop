@@ -16,7 +16,7 @@ export const createProduct = async(item: ProductRequest): Promise<Product> => {
         image,
         count
     }
-    console.log('New Product: ', product);
+    console.log('New Product to be put to DB: ', product);
     const res = await DB.createEntity(product);
     console.log('Put result: ', res);
     return res;

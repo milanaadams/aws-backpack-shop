@@ -1,0 +1,23 @@
+{
+  "name": "aws-backpack-shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milanaadams/aws-backpack-shop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/milanaadams/aws-backpack-shop/issues"
+  },
+  "homepage": "https://github.com/milanaadams/aws-backpack-shop#readme",
+  "dependencies": {
+    "@aws-sdk/client-sns": "^3.188.0",
+    "@serverless/compose": "^1.3.0"
+  }
+}
