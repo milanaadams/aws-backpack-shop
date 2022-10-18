@@ -1,12 +1,12 @@
+import { SNSClient, PublishCommand } from '@aws-sdk/client-sns';
 import { middyfy } from '@libs/lambda';
 import { SQSEvent } from 'aws-lambda';
-import { SNS } from 'aws-sdk';
 
 import * as productService from '@services/product.service';
 
 
 export const catalogBatchProcess = async (event: SQSEvent) => {
-    const sns = new SNS({ region: 'eu-central-1' });
+    const sns = new SNSClient({ region: 'eu-central-1' });
     console.log('Catalog Batch process is starting ...');
 
     const items = event.Records.map(({ body }) => JSON.parse(body));
@@ -15,24 +15,31 @@ export const catalogBatchProcess = async (event: SQSEvent) => {
         items.map(async(item) => {
             const newProduct = await productService.createProduct(item);
             console.log('New product from batch process: ', newProduct);
-            const params = {
+            const params = new PublishCommand({
                 Subject: 'New product has been added',
                 Message: JSON.stringify(item),
                 TopicArn: process.env.SNS_ARN,
-              };
+                MessageAttributes: {
+                  price: {
+                    DataType: 'Number',
+                    StringValue: item.price,
+                  }
+                }
+              });
             console.log('SNS sending email for: ', item);
     
             try {
-                sns.publish(params);
+                await sns.send(params);
                 console.log('Message has been sent to email');
             }catch(err){
               console.log('catalogBatchProcess error', err);
-              const params = {
+              const params = new PublishCommand({
                 Subject: 'New product has not been added',
                 Message: JSON.stringify(item),
                 TopicArn: process.env.SNS_ARN,
-              };
-              sns.publish(params);
+              });
+              await sns.send(params);
+              console.log('Error message has been sent to email');
             }
         })
     )

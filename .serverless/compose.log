@@ -18,7 +18,7 @@ product-service › functions:
 product-service ›   getProductsList: product-service-natallia-adziyanava-dev-getProductsList (15 kB)
 product-service ›   getProductsById: product-service-natallia-adziyanava-dev-getProductsById (15 kB)
 product-service ›   createProduct: product-service-natallia-adziyanava-dev-createProduct (147 kB)
-product-service ›   catalogBatchProcess: product-service-natallia-adziyanava-dev-catalogBatchProcess (26 kB)
+product-service ›   catalogBatchProcess: product-service-natallia-adziyanava-dev-catalogBatchProcess (348 kB)
 product-service ›   swaggerUI: product-service-natallia-adziyanava-dev-swagger-ui (1.6 kB)
 product-service ›   swaggerJSON: product-service-natallia-adziyanava-dev-swagger-json (2.9 kB)
 product-service › Monitor all your API routes with Serverless Console: run "serverless --console"
@@ -40,13 +40,13 @@ product-service ›   catalogBatchProcess: product-service-natallia-adziyanava-d
 product-service › 
 product-service › Stack Outputs:
 product-service ›   CatalogItemsQueueURL: https://sqs.eu-central-1.amazonaws.com/398158581759/CatalogItemsQueue-natallia-adziyanava
-product-service ›   SwaggerJSONLambdaFunctionQualifiedArn: arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-swagger-json:5
-product-service ›   SwaggerUILambdaFunctionQualifiedArn: arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-swagger-ui:4
+product-service ›   SwaggerJSONLambdaFunctionQualifiedArn: arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-swagger-json:7
+product-service ›   SwaggerUILambdaFunctionQualifiedArn: arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-swagger-ui:6
 product-service ›   CatalogItemsQueueArn: arn:aws:sqs:eu-central-1:398158581759:CatalogItemsQueue-natallia-adziyanava
-product-service ›   GetProductsListLambdaFunctionQualifiedArn: arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-getProductsList:6
-product-service ›   CreateProductLambdaFunctionQualifiedArn: arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-createProduct:5
-product-service ›   CatalogBatchProcessLambdaFunctionQualifiedArn: arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-catalogBatchProcess:12
-product-service ›   GetProductsByIdLambdaFunctionQualifiedArn: arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-getProductsById:6
+product-service ›   GetProductsListLambdaFunctionQualifiedArn: arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-getProductsList:8
+product-service ›   CreateProductLambdaFunctionQualifiedArn: arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-createProduct:7
+product-service ›   CatalogBatchProcessLambdaFunctionQualifiedArn: arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-catalogBatchProcess:22
+product-service ›   GetProductsByIdLambdaFunctionQualifiedArn: arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-getProductsById:8
 product-service ›   ServiceEndpoint: https://i44nky5d2k.execute-api.eu-central-1.amazonaws.com/dev
 product-service ›   ServerlessDeploymentBucketName: product-service-natallia-serverlessdeploymentbuck-4lq3hx64nijw
 product-service › deployed
