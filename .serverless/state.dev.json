@@ -30,6 +30,15 @@
         "ServiceEndpoint": "https://5ozs9x5ate.execute-api.eu-central-1.amazonaws.com/dev",
         "ServerlessDeploymentBucketName": "import-service-natallia-serverlessdeploymentbuck-mtfuo1ekm917"
       }
+    },
+    "authorization-service": {
+      "state": {
+        "detectedFrameworkVersion": "3.21.0"
+      },
+      "outputs": {
+        "BasicAuthorizerLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:auth-service-natallia-adziyanava-dev-basicAuthorizer:1",
+        "ServerlessDeploymentBucketName": "auth-service-natallia-ad-serverlessdeploymentbuck-15n6e1ygni1ea"
+      }
     }
   }
 }

@@ -14,7 +14,14 @@ export default {
               name: true
             }
           }
-        }
+        },
+        authorizer: {
+					name: 'basicAuthorizer',
+          type: 'token',
+					arn: 'arn:aws:lambda:eu-central-1:398158581759:function:auth-service-natallia-adziyanava-dev-basicAuthorizer',
+					identitySource: 'method.request.header.Authorization',
+					resultTtlInSeconds: 0
+				}
       },
     },
   ],

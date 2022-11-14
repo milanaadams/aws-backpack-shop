@@ -8,3 +8,6 @@ services:
     params:
       CatalogItemsQueueArn: ${product-service.CatalogItemsQueueArn}
       CatalogItemsQueueURL: ${product-service.CatalogItemsQueueURL}
+
+  authorization-service:
+    path: authorization-service

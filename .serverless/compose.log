@@ -2,58 +2,40 @@
 Deploying to stage dev
 product-service › waiting
 import-service › waiting
+authorization-service › waiting
 product-service › deploying
+authorization-service › deploying
 product-service › Running "serverless deploy --stage dev"
 product-service › Running "serverless" from node_modules
+authorization-service › Running "serverless deploy --stage dev"
+authorization-service › Running "serverless" from node_modules
 product-service › Deploying product-service-natallia-adziyanava to stage dev (eu-central-1)
 product-service › Creating Swagger file...
-product-service › ✔ Service deployed to stack product-service-natallia-adziyanava-dev (48s)
-product-service › endpoints:
-product-service ›   GET - https://i44nky5d2k.execute-api.eu-central-1.amazonaws.com/dev/products
-product-service ›   GET - https://i44nky5d2k.execute-api.eu-central-1.amazonaws.com/dev/products/{productId}
-product-service ›   POST - https://i44nky5d2k.execute-api.eu-central-1.amazonaws.com/dev/products
-product-service ›   GET - https://i44nky5d2k.execute-api.eu-central-1.amazonaws.com/dev/dev/swagger
-product-service ›   GET - https://i44nky5d2k.execute-api.eu-central-1.amazonaws.com/dev/dev/swagger.json
-product-service › functions:
-product-service ›   getProductsList: product-service-natallia-adziyanava-dev-getProductsList (15 kB)
-product-service ›   getProductsById: product-service-natallia-adziyanava-dev-getProductsById (15 kB)
-product-service ›   createProduct: product-service-natallia-adziyanava-dev-createProduct (147 kB)
-product-service ›   catalogBatchProcess: product-service-natallia-adziyanava-dev-catalogBatchProcess (348 kB)
-product-service ›   swaggerUI: product-service-natallia-adziyanava-dev-swagger-ui (1.6 kB)
-product-service ›   swaggerJSON: product-service-natallia-adziyanava-dev-swagger-json (2.9 kB)
-product-service › Monitor all your API routes with Serverless Console: run "serverless --console"
-product-service › Running "serverless info --verbose --stage dev"
-product-service › Running "serverless" from node_modules
-product-service › service: product-service-natallia-adziyanava
-product-service › stage: dev
-product-service › region: eu-central-1
-product-service › stack: product-service-natallia-adziyanava-dev
-product-service › endpoints:
-product-service ›   GET - https://i44nky5d2k.execute-api.eu-central-1.amazonaws.com/dev/products
-product-service ›   GET - https://i44nky5d2k.execute-api.eu-central-1.amazonaws.com/dev/products/{productId}
-product-service ›   POST - https://i44nky5d2k.execute-api.eu-central-1.amazonaws.com/dev/products
-product-service › functions:
-product-service ›   getProductsList: product-service-natallia-adziyanava-dev-getProductsList
-product-service ›   getProductsById: product-service-natallia-adziyanava-dev-getProductsById
-product-service ›   createProduct: product-service-natallia-adziyanava-dev-createProduct
-product-service ›   catalogBatchProcess: product-service-natallia-adziyanava-dev-catalogBatchProcess
-product-service › 
-product-service › Stack Outputs:
-product-service ›   CatalogItemsQueueURL: https://sqs.eu-central-1.amazonaws.com/398158581759/CatalogItemsQueue-natallia-adziyanava
-product-service ›   SwaggerJSONLambdaFunctionQualifiedArn: arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-swagger-json:7
-product-service ›   SwaggerUILambdaFunctionQualifiedArn: arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-swagger-ui:6
-product-service ›   CatalogItemsQueueArn: arn:aws:sqs:eu-central-1:398158581759:CatalogItemsQueue-natallia-adziyanava
-product-service ›   GetProductsListLambdaFunctionQualifiedArn: arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-getProductsList:8
-product-service ›   CreateProductLambdaFunctionQualifiedArn: arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-createProduct:7
-product-service ›   CatalogBatchProcessLambdaFunctionQualifiedArn: arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-catalogBatchProcess:22
-product-service ›   GetProductsByIdLambdaFunctionQualifiedArn: arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-getProductsById:8
-product-service ›   ServiceEndpoint: https://i44nky5d2k.execute-api.eu-central-1.amazonaws.com/dev
-product-service ›   ServerlessDeploymentBucketName: product-service-natallia-serverlessdeploymentbuck-4lq3hx64nijw
-product-service › deployed
+authorization-service › DOTENV: Loading environment variables from .env:
+authorization-service › - milanaadams
+authorization-service › Deploying auth-service-natallia-adziyanava to stage dev (eu-central-1)
+product-service › No changes to deploy. Deployment skipped. (4s)
+authorization-service › No changes to deploy. Deployment skipped. (2s)
+product-service › no changes
+authorization-service › Need a better logging experience than CloudWatch? Try our Dev Mode in console: run "serverless --console"
+authorization-service › Running "serverless info --verbose --stage dev"
+authorization-service › Running "serverless" from node_modules
+authorization-service › DOTENV: Loading environment variables from .env:
+authorization-service › - milanaadams
+authorization-service › service: auth-service-natallia-adziyanava
+authorization-service › stage: dev
+authorization-service › region: eu-central-1
+authorization-service › stack: auth-service-natallia-adziyanava-dev
+authorization-service › functions:
+authorization-service ›   basicAuthorizer: auth-service-natallia-adziyanava-dev-basicAuthorizer
+authorization-service › 
+authorization-service › Stack Outputs:
+authorization-service ›   BasicAuthorizerLambdaFunctionQualifiedArn: arn:aws:lambda:eu-central-1:398158581759:function:auth-service-natallia-adziyanava-dev-basicAuthorizer:1
+authorization-service ›   ServerlessDeploymentBucketName: auth-service-natallia-ad-serverlessdeploymentbuck-15n6e1ygni1ea
+authorization-service › no changes
 import-service › deploying
 import-service › Running "serverless deploy --stage dev --param CatalogItemsQueueArn=arn:aws:sqs:eu-central-1:398158581759:CatalogItemsQueue-natallia-adziyanava --param CatalogItemsQueueURL=https://sqs.eu-central-1.amazonaws.com/398158581759/CatalogItemsQueue-natallia-adziyanava"
 import-service › Running "serverless" from node_modules
 import-service › Deploying import-service-natallia-adziyanava to stage dev (eu-central-1)
 import-service › No changes to deploy. Deployment skipped. (2s)
-import-service › Monitor all your API routes with Serverless Console: run "serverless --console"
 import-service › no changes
