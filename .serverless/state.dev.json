@@ -9,13 +9,13 @@
       },
       "outputs": {
         "CatalogItemsQueueURL": "https://sqs.eu-central-1.amazonaws.com/398158581759/CatalogItemsQueue-natallia-adziyanava",
-        "SwaggerJSONLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-swagger-json:7",
-        "SwaggerUILambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-swagger-ui:6",
+        "SwaggerJSONLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-swagger-json:9",
+        "SwaggerUILambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-swagger-ui:8",
         "CatalogItemsQueueArn": "arn:aws:sqs:eu-central-1:398158581759:CatalogItemsQueue-natallia-adziyanava",
-        "GetProductsListLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-getProductsList:8",
-        "CreateProductLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-createProduct:7",
-        "CatalogBatchProcessLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-catalogBatchProcess:22",
-        "GetProductsByIdLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-getProductsById:8",
+        "GetProductsListLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-getProductsList:10",
+        "CreateProductLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-createProduct:9",
+        "CatalogBatchProcessLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-catalogBatchProcess:24",
+        "GetProductsByIdLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-getProductsById:10",
         "ServiceEndpoint": "https://i44nky5d2k.execute-api.eu-central-1.amazonaws.com/dev",
         "ServerlessDeploymentBucketName": "product-service-natallia-serverlessdeploymentbuck-4lq3hx64nijw"
       }
@@ -25,8 +25,8 @@
         "detectedFrameworkVersion": "3.21.0"
       },
       "outputs": {
-        "ImportProductsFileLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:import-service-natallia-adziyanava-dev-importProductsFile:7",
-        "ImportFileParserLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:import-service-natallia-adziyanava-dev-importFileParser:7",
+        "ImportProductsFileLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:import-service-natallia-adziyanava-dev-importProductsFile:10",
+        "ImportFileParserLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:import-service-natallia-adziyanava-dev-importFileParser:10",
         "ServiceEndpoint": "https://5ozs9x5ate.execute-api.eu-central-1.amazonaws.com/dev",
         "ServerlessDeploymentBucketName": "import-service-natallia-serverlessdeploymentbuck-mtfuo1ekm917"
       }
@@ -36,7 +36,7 @@
         "detectedFrameworkVersion": "3.21.0"
       },
       "outputs": {
-        "BasicAuthorizerLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:auth-service-natallia-adziyanava-dev-basicAuthorizer:1",
+        "BasicAuthorizerLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:auth-service-natallia-adziyanava-dev-basicAuthorizer:10",
         "ServerlessDeploymentBucketName": "auth-service-natallia-ad-serverlessdeploymentbuck-15n6e1ygni1ea"
       }
     }
