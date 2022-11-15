@@ -10,8 +10,12 @@
     "node": ">=14.15.0"
   },
   "dependencies": {
-    "@middy/core": "^3.4.0",
-    "@middy/http-json-body-parser": "^3.4.0"
+    "@aws-sdk/client-sns": "^3.202.0",
+    "@middy/core": "^2.5.7",
+    "@middy/http-cors": "^3.3.1",
+    "@middy/http-json-body-parser": "^2.5.7",
+    "aws-lambda": "^1.0.7",
+    "serverless-dotenv-plugin": "^4.0.2"
   },
   "devDependencies": {
     "@serverless/typescript": "^3.0.0",
@@ -20,7 +24,6 @@
     "esbuild": "^0.14.11",
     "json-schema-to-ts": "^1.5.0",
     "serverless": "^3.0.0",
-    "serverless-dotenv-plugin": "^4.0.2",
     "serverless-esbuild": "^1.23.3",
     "ts-node": "^10.4.0",
     "tsconfig-paths": "^3.9.0",

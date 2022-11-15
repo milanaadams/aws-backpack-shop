@@ -18,7 +18,7 @@ export default {
         authorizer: {
 					name: 'basicAuthorizer',
           type: 'token',
-					arn: 'arn:aws:lambda:eu-central-1:398158581759:function:auth-service-natallia-adziyanava-dev-basicAuthorizer',
+					arn: 'arn:aws:lambda:eu-central-1:398158581759:function:auth-service-natallia-a-dev-basicAuthorizer',
 					identitySource: 'method.request.header.Authorization',
 					resultTtlInSeconds: 0
 				}

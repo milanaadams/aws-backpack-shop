@@ -70,9 +70,7 @@ const serverlessConfiguration: AWS = {
             'gatewayresponse.header.Access-Control-Allow-Headers': "'*'",
           },
           ResponseType: 'DEFAULT_4XX',
-          RestApiId: {
-            Ref: 'ApiGatewayRestApi',
-          },
+          RestApiId: '5ozs9x5ate',
         },
       },
     }

@@ -3,7 +3,6 @@ import { formatJSONResponse } from '@libs/api-gateway';
 import { APIGatewayTokenAuthorizerEvent } from 'aws-lambda';
 import { headers } from '@libs/headers';
 
-import { getCredentials } from '@helpers/getCredentials';
 import { generatePolicy } from '@helpers/generatePolicy';
 
 export const basicAuthorizer = async (
@@ -15,10 +14,10 @@ export const basicAuthorizer = async (
 
         try {
 
-            const { type, authorizationToken } = event;
+            const { type, authorizationToken, methodArn } = event;
 
         if (!authorizationToken || type !== 'TOKEN') {
-            console.log('Basic authorizer: No auth token provided');
+            console.log('Basic authorizer: No authorization token provided');
             return formatJSONResponse({
                 statusCode: 401,
                 headers,
@@ -26,13 +25,17 @@ export const basicAuthorizer = async (
             });
         };
 
-            const [username, password] = getCredentials(authorizationToken);
+        const encodedCreds = authorizationToken.split(' ')[1];
+        const decoded = Buffer.from(encodedCreds, 'base64').toString('utf-8');
+        console.log('Decoded creds: ', decoded);
+        const [username, password] = decoded.split(':');
+
             const validPassword = process.env[username];
 
             const isValid = username && password && validPassword === password;
             const access = isValid ? ALLOW : DENY;
 
-            const policy = generatePolicy(username, access, event.methodArn);
+            const policy = generatePolicy(encodedCreds, methodArn, access);
 
             console.log('Authorization policy: ', JSON.stringify(policy));
 

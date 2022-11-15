@@ -3,9 +3,10 @@ import type { AWS } from '@serverless/typescript';
 import basicAuthorizer from '@functions/basicAuthorizer';
 
 const serverlessConfiguration: AWS = {
-  service: 'auth-service-natallia-adziyanava',
+  service: 'auth-service-natallia-a',
   frameworkVersion: '3',
   plugins: ['serverless-esbuild', 'serverless-dotenv-plugin'],
+  useDotenv: true,
   provider: {
     name: 'aws',
     runtime: 'nodejs14.x',

@@ -1,3 +1,4 @@
+import { headers } from '@libs/headers';
 import type { APIGatewayProxyEvent, APIGatewayProxyResult, Handler } from "aws-lambda"
 import type { FromSchema } from "json-schema-to-ts";
 
