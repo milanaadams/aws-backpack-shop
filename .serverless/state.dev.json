@@ -1,0 +1,44 @@
+{
+  "service": {
+    "id": "2wrqxe3"
+  },
+  "components": {
+    "product-service": {
+      "state": {
+        "detectedFrameworkVersion": "3.21.0"
+      },
+      "outputs": {
+        "CatalogItemsQueueURL": "https://sqs.eu-central-1.amazonaws.com/398158581759/CatalogItemsQueue-natallia-adziyanava",
+        "SwaggerJSONLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-swagger-json:9",
+        "SwaggerUILambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-swagger-ui:8",
+        "CatalogItemsQueueArn": "arn:aws:sqs:eu-central-1:398158581759:CatalogItemsQueue-natallia-adziyanava",
+        "GetProductsListLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-getProductsList:13",
+        "CreateProductLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-createProduct:12",
+        "CatalogBatchProcessLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-catalogBatchProcess:24",
+        "GetProductsByIdLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:product-service-natallia-adziyanava-dev-getProductsById:13",
+        "ServiceEndpoint": "https://i44nky5d2k.execute-api.eu-central-1.amazonaws.com/dev",
+        "ServerlessDeploymentBucketName": "product-service-natallia-serverlessdeploymentbuck-4lq3hx64nijw"
+      }
+    },
+    "import-service": {
+      "state": {
+        "detectedFrameworkVersion": "3.21.0"
+      },
+      "outputs": {
+        "ImportProductsFileLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:import-service-natallia-adziyanava-dev-importProductsFile:20",
+        "ImportFileParserLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:import-service-natallia-adziyanava-dev-importFileParser:20",
+        "ServiceEndpoint": "https://5ozs9x5ate.execute-api.eu-central-1.amazonaws.com/dev",
+        "ServerlessDeploymentBucketName": "import-service-natallia-serverlessdeploymentbuck-mtfuo1ekm917"
+      }
+    },
+    "authorization-service": {
+      "state": {
+        "detectedFrameworkVersion": "3.21.0"
+      },
+      "outputs": {
+        "BasicAuthorizerLambdaFunctionQualifiedArn": "arn:aws:lambda:eu-central-1:398158581759:function:auth-service-natallia-a-dev-basicAuthorizer:15",
+        "ServerlessDeploymentBucketName": "auth-service-natallia-a-serverlessdeploymentbuck-to3wlbvwz82k"
+      }
+    }
+  }
+}
